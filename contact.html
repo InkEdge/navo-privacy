@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
   <title>联系我们 - Contact Us | Navo</title>
   <style>
     body {
@@ -16,38 +16,51 @@
       display: flex;
       justify-content: center;
       gap: 12px;
-      padding: 16px 0;
+      padding: 14px 0;
       background-color: #ffffff;
       border-bottom: 1px solid #eee;
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch; /* iOS平滑滚动 */
+      scrollbar-width: none; /* Firefox隐藏滚动条 */
+    }
+    .lang-bar::-webkit-scrollbar {
+      display: none; /* Chrome等隐藏滚动条 */
     }
 
     .lang-bar button {
-      padding: 6px 14px;
+      padding: 8px 16px;
       border: 1px solid #ccc;
-      background-color: #f5f5f5;
-      border-radius: 8px;
+      background: linear-gradient(to bottom, #f9f9f9, #eaeaea);
+      border-radius: 24px;
       cursor: pointer;
-      font-size: 14px;
-      transition: background-color 0.2s;
+      font-size: 15px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+      flex-shrink: 0;
+      touch-action: manipulation;
     }
 
     .lang-bar button:hover {
-      background-color: #e0e0e0;
+      background-color: #ddd;
+      border-color: #aaa;
     }
 
     .lang-bar button.active {
       background-color: #007aff;
       color: white;
       border-color: #007aff;
+      font-weight: bold;
     }
 
     .container {
       max-width: 600px;
       margin: 40px auto;
-      padding: 40px;
+      padding: 40px 20px;
       background-color: #ffffff;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
       border-radius: 12px;
@@ -64,6 +77,7 @@
       color: #666;
       font-size: 16px;
       line-height: 1.6;
+      white-space: pre-line; /* 保持换行 */
     }
 
     .email {
@@ -84,60 +98,68 @@
 </head>
 <body>
 
-  <div class="lang-bar">
-    <button onclick="switchLang('zh')" id="btn-zh">中文</button>
-    <button onclick="switchLang('en')" id="btn-en">English</button>
-    <button onclick="switchLang('ja')" id="btn-ja">日本語</button>
-    <button onclick="switchLang('fr')" id="btn-fr">Français</button>
-    <button onclick="switchLang('es')" id="btn-es">Español</button>
+  <div class="lang-bar" role="navigation" aria-label="语言切换">
+    <button onclick="switchLang('zh')" id="btn-zh" aria-pressed="false">中文</button>
+    <button onclick="switchLang('en')" id="btn-en" aria-pressed="false">English</button>
+    <button onclick="switchLang('ja')" id="btn-ja" aria-pressed="false">日本語</button>
+    <button onclick="switchLang('fr')" id="btn-fr" aria-pressed="false">Français</button>
+    <button onclick="switchLang('es')" id="btn-es" aria-pressed="false">Español</button>
   </div>
 
-  <div class="container">
-    <div class="lang-content" id="zh">
+  <div class="container" role="main">
+    <div class="lang-content" id="zh" style="display:none">
       <h1>联系我们</h1>
-      <p>感谢您使用 Navo！<br />如果您在使用过程中遇到任何问题或有建议，欢迎通过以下方式与我们联系：</p>
+      <p>感谢您使用 Navo！<br>如果您在使用过程中遇到任何问题或有建议，欢迎通过以下方式与我们联系：</p>
       <div class="email">📧 <a href="mailto:chenyisy@gmail.com">chenyisy@gmail.com</a></div>
     </div>
 
-    <div class="lang-content" id="en" style="display: none;">
+    <div class="lang-content" id="en" style="display:none">
       <h1>Contact Us</h1>
-      <p>Thank you for using Navo!<br />If you have any questions or suggestions, feel free to reach us at:</p>
+      <p>Thank you for using Navo!<br>If you have any questions or suggestions, feel free to reach us at:</p>
       <div class="email">📧 <a href="mailto:chenyisy@gmail.com">chenyisy@gmail.com</a></div>
     </div>
 
-    <div class="lang-content" id="ja" style="display: none;">
+    <div class="lang-content" id="ja" style="display:none">
       <h1>お問い合わせ</h1>
-      <p>Navoをご利用いただきありがとうございます。<br />ご質問やご意見がございましたら、以下の方法でご連絡ください：</p>
+      <p>Navoをご利用いただきありがとうございます。<br>ご質問やご意見がございましたら、以下の方法でご連絡ください：</p>
       <div class="email">📧 <a href="mailto:chenyisy@gmail.com">chenyisy@gmail.com</a></div>
     </div>
 
-    <div class="lang-content" id="fr" style="display: none;">
+    <div class="lang-content" id="fr" style="display:none">
       <h1>Contactez-nous</h1>
-      <p>Merci d'utiliser Navo !<br />Si vous avez des questions ou des suggestions, n'hésitez pas à nous contacter :</p>
+      <p>Merci d'utiliser Navo !<br>Si vous avez des questions ou des suggestions, n'hésitez pas à nous contacter :</p>
       <div class="email">📧 <a href="mailto:chenyisy@gmail.com">chenyisy@gmail.com</a></div>
     </div>
 
-    <div class="lang-content" id="es" style="display: none;">
+    <div class="lang-content" id="es" style="display:none">
       <h1>Contáctenos</h1>
-      <p>¡Gracias por usar Navo!<br />Si tiene alguna pregunta o sugerencia, no dude en contactarnos:</p>
+      <p>¡Gracias por usar Navo!<br>Si tiene alguna pregunta o sugerencia, no dude en contactarnos:</p>
       <div class="email">📧 <a href="mailto:chenyisy@gmail.com">chenyisy@gmail.com</a></div>
     </div>
   </div>
 
   <script>
     function switchLang(lang) {
-      document.querySelectorAll(".lang-content").forEach(el => {
-        el.style.display = "none";
-      });
-      document.getElementById(lang).style.display = "block";
+      // 隐藏全部语言内容
+      document.querySelectorAll(".lang-content").forEach(el => el.style.display = "none");
+      // 显示目标语言
+      const target = document.getElementById(lang);
+      if (target) target.style.display = "block";
 
+      // 取消所有按钮激活
       document.querySelectorAll(".lang-bar button").forEach(btn => {
         btn.classList.remove("active");
+        btn.setAttribute("aria-pressed", "false");
       });
-      document.getElementById("btn-" + lang).classList.add("active");
+      // 激活当前按钮
+      const activeBtn = document.getElementById("btn-" + lang);
+      if (activeBtn) {
+        activeBtn.classList.add("active");
+        activeBtn.setAttribute("aria-pressed", "true");
+      }
     }
 
-    // 自动检测浏览器语言
+    // 自动检测浏览器语言，默认英语fallback
     window.onload = () => {
       const langMap = {
         zh: 'zh',
@@ -146,10 +168,11 @@
         fr: 'fr',
         es: 'es'
       };
-      const browserLang = navigator.language.slice(0, 2);
+      const browserLang = navigator.language.slice(0, 2).toLowerCase();
       const defaultLang = langMap[browserLang] || 'en';
       switchLang(defaultLang);
     };
   </script>
+
 </body>
 </html>
