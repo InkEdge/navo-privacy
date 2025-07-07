@@ -12,49 +12,23 @@
       padding: 0;
     }
 
-    .lang-bar {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      padding: 14px 0;
-      background-color: #ffffff;
+    .lang-selector {
+      text-align: center;
+      padding: 16px;
+      background-color: #fff;
       border-bottom: 1px solid #eee;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch; /* iOS平滑滚动 */
-      scrollbar-width: none; /* Firefox隐藏滚动条 */
-    }
-    .lang-bar::-webkit-scrollbar {
-      display: none; /* Chrome等隐藏滚动条 */
     }
 
-    .lang-bar button {
-      padding: 8px 16px;
+    .lang-selector select {
+      font-size: 16px;
+      padding: 8px 12px;
+      border-radius: 6px;
       border: 1px solid #ccc;
-      background: linear-gradient(to bottom, #f9f9f9, #eaeaea);
-      border-radius: 24px;
-      cursor: pointer;
-      font-size: 15px;
+      background-color: #fff;
       font-weight: 500;
-      transition: all 0.2s ease;
-      white-space: nowrap;
-      flex-shrink: 0;
-      touch-action: manipulation;
-    }
-
-    .lang-bar button:hover {
-      background-color: #ddd;
-      border-color: #aaa;
-    }
-
-    .lang-bar button.active {
-      background-color: #007aff;
-      color: white;
-      border-color: #007aff;
-      font-weight: bold;
     }
 
     .container {
@@ -77,7 +51,7 @@
       color: #666;
       font-size: 16px;
       line-height: 1.6;
-      white-space: pre-line; /* 保持换行 */
+      white-space: pre-line;
     }
 
     .email {
@@ -98,12 +72,15 @@
 </head>
 <body>
 
-  <div class="lang-bar" role="navigation" aria-label="语言切换">
-    <button onclick="switchLang('zh')" id="btn-zh" aria-pressed="false">中文</button>
-    <button onclick="switchLang('en')" id="btn-en" aria-pressed="false">English</button>
-    <button onclick="switchLang('ja')" id="btn-ja" aria-pressed="false">日本語</button>
-    <button onclick="switchLang('fr')" id="btn-fr" aria-pressed="false">Français</button>
-    <button onclick="switchLang('es')" id="btn-es" aria-pressed="false">Español</button>
+  <div class="lang-selector">
+    <label for="lang-select" style="font-weight: 500;">🌐 选择语言 / Select Language：</label>
+    <select id="lang-select" onchange="switchLang(this.value)">
+      <option value="zh">中文</option>
+      <option value="en">English</option>
+      <option value="ja">日本語</option>
+      <option value="fr">Français</option>
+      <option value="es">Español</option>
+    </select>
   </div>
 
   <div class="container" role="main">
@@ -140,26 +117,11 @@
 
   <script>
     function switchLang(lang) {
-      // 隐藏全部语言内容
       document.querySelectorAll(".lang-content").forEach(el => el.style.display = "none");
-      // 显示目标语言
       const target = document.getElementById(lang);
       if (target) target.style.display = "block";
-
-      // 取消所有按钮激活
-      document.querySelectorAll(".lang-bar button").forEach(btn => {
-        btn.classList.remove("active");
-        btn.setAttribute("aria-pressed", "false");
-      });
-      // 激活当前按钮
-      const activeBtn = document.getElementById("btn-" + lang);
-      if (activeBtn) {
-        activeBtn.classList.add("active");
-        activeBtn.setAttribute("aria-pressed", "true");
-      }
     }
 
-    // 自动检测浏览器语言，默认英语fallback
     window.onload = () => {
       const langMap = {
         zh: 'zh',
@@ -170,6 +132,7 @@
       };
       const browserLang = navigator.language.slice(0, 2).toLowerCase();
       const defaultLang = langMap[browserLang] || 'en';
+      document.getElementById("lang-select").value = defaultLang;
       switchLang(defaultLang);
     };
   </script>
