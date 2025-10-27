@@ -1,4 +1,4 @@
-<!-- 此为 Navo 订阅服务条款多语言支持页面 HTML 文件 -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,22 +7,23 @@
   <title>Terms of Subscription | Navo</title>
   <style>
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
-      background-color: #f9f9f9;
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, 'PingFang SC','Hiragino Sans GB','Microsoft YaHei', sans-serif;
+      background-color: #f4f7fb;
       margin: 0;
       padding: 0;
+      color: #222;
+      line-height: 1.6;
     }
-
     .lang-selector {
       text-align: center;
       padding: 16px;
       background-color: #fff;
-      border-bottom: 1px solid #eee;
+      border-bottom: 1px solid #e0e6f1;
       position: sticky;
       top: 0;
       z-index: 1000;
+      box-shadow: 0 2px 8px rgba(60,113,193,0.08);
     }
-
     .lang-selector select {
       font-size: 16px;
       padding: 8px 12px;
@@ -31,43 +32,31 @@
       background-color: #fff;
       font-weight: 500;
     }
-
     .container {
       max-width: 700px;
-      margin: 40px auto;
-      padding: 40px 20px;
+      margin: 28px auto 40px;
+      padding: 28px 20px;
       background-color: #ffffff;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(60,113,193,0.08);
+      border-radius: 16px;
     }
-
-    h1 {
-      font-size: 26px;
-      margin-bottom: 20px;
-      color: #333;
-    }
-
-    p {
-      font-size: 16px;
-      color: #555;
-      line-height: 1.7;
-      margin-bottom: 16px;
-      white-space: pre-line;
-    }
-
+    h1 { font-size: 26px; margin: 0 0 8px; color: #3c71c1; }
+    .update { color: #888; margin-bottom: 18px; }
+    h2 { font-size: 20px; color: #3c71c1; margin-top: 24px; }
+    p, li { font-size: 16px; color: #333; }
+    ul { padding-left: 20px; margin: 8px 0 14px; }
+    a { color: #3c71c1; text-decoration: underline; word-break: break-all; }
+    .lang-content { display: none; }
     @media (max-width: 420px) {
-      .container {
-        padding: 24px 14px;
-      }
-      .lang-selector select {
-        font-size: 15px;
-      }
-      h1 {
-        font-size: 22px;
-      }
-      p {
-        font-size: 15px;
-      }
+      .container { padding: 22px 14px; border-radius: 0; box-shadow: none; margin: 0 auto; }
+      h1 { font-size: 22px; }
+      h2 { font-size: 19px; }
+      p, li { font-size: 15px; }
+    }
+    @media print {
+      .lang-selector { display: none; }
+      body { background: #fff; }
+      .container { box-shadow: none; margin: 0; padding: 20px; }
     }
   </style>
 </head>
@@ -84,173 +73,284 @@
   </div>
 
   <div class="container">
-      <!-- 中文 -->
-    <div class="lang-content" id="zh" style="display:none;">
+    <!-- 中文 -->
+    <div class="lang-content" id="zh" lang="zh-CN">
       <h1>订阅服务条款</h1>
-      <p>
-欢迎使用 Navo！在您使用本应用及其订阅服务之前，请您认真阅读并理解本服务条款。一旦您开始使用，即视为您已同意本条款内容。
+      <p class="update">最后更新：2025年10月28日</p>
+      <p>欢迎使用 Navo！在您使用本应用及其订阅服务之前，请您认真阅读并理解本服务条款。一旦您开始使用，即视为您已同意本条款内容。</p>
 
-【1】服务内容：
-- 隐私保险箱：本地加密存储您的照片、视频等私密文件；
-- 智能清理：识别并清理重复或无用的媒体文件，释放设备空间；
-- VIP 订阅：解锁高级功能、无广告体验、优先技术支持等权益。
+      <h2>【1】服务内容</h2>
+      <ul>
+        <li><strong>隐私保险箱：</strong>使用 AES-GCM 本地加密存储您的照片、视频等私密文件；</li>
+        <li><strong>智能清理：</strong>使用 Vision 框架识别并清理重复或无用的媒体文件，释放设备空间；</li>
+        <li><strong>图像分析：</strong>本地图像特征提取与相似度检测；</li>
+        <li><strong>自动清理：</strong>系统自动清理缓存、临时文件和过期日志；</li>
+        <li><strong>订阅服务：</strong>解锁隐私保险箱、照片清理、视频清理等高级功能。</li>
+      </ul>
 
-【2】订阅与自动续费：
-- 提供按周/按年计费的自动续订订阅服务；
-- 新用户可享受 3 天免费试用，试用期结束后自动续订，除非您至少提前 24 小时取消；
-- 费用将通过 Apple ID 扣款，续订将在当前周期结束前 24 小时自动执行；
-- 可在设备「设置」>「Apple ID」>「订阅」中管理/取消订阅；
-- 免费试用仅限新用户。
+      <h2>【2】订阅与自动续费</h2>
+      <ul>
+        <li>提供年订阅服务（$19.99/年）；</li>
+        <li>新用户可享受 3 天免费试用，试用期结束后自动续订，除非您至少提前 24 小时取消；</li>
+        <li>费用将通过 Apple ID 扣款，续订将在当前周期结束前 24 小时自动执行；</li>
+        <li>可在设备「设置」&gt;「Apple ID」&gt;「订阅」中管理/取消订阅；</li>
+        <li>免费试用仅限新用户。</li>
+      </ul>
 
-【3】用户责任：
-- 妥善保管账户信息；
-- 禁止存储违法或侵犯他人权益的内容。
+      <h2>【3】数据与隐私</h2>
+      <ul>
+        <li>所有数据处理均在您的设备本地完成；</li>
+        <li>我们不会收集或存储您的个人照片、视频；</li>
+        <li>我们不会收集任何分析或使用数据；</li>
+        <li>详细信息请参阅我们的隐私政策。</li>
+      </ul>
 
-【4】退款政策：
-- 所有订阅交易由 Apple 处理；
-- 若需退款，请通过 Apple 官方渠道申请（如 reportaproblem.apple.com）；
-- 免费试用期间取消不会扣费。
+      <h2>【4】用户责任</h2>
+      <ul>
+        <li>妥善保管账户信息；</li>
+        <li>禁止存储违法或侵犯他人权益的内容。</li>
+      </ul>
 
-【5】条款变更与终止：
-- 我们可能调整条款并在 App 内通知，继续使用视为同意。
+      <h2>【5】退款政策</h2>
+      <ul>
+        <li>所有订阅交易由 Apple 处理；</li>
+        <li>若需退款，请通过 Apple 官方渠道申请（如 <a href="https://reportaproblem.apple.com/" target="_blank" rel="noopener">reportaproblem.apple.com</a>）；</li>
+        <li>免费试用期间取消不会扣费。</li>
+      </ul>
 
-【6】法律适用：
-- 条款适用用户所在地法律。如有疑问，请联系：chenyisy@gmail.com
-      </p>
+      <h2>【6】条款变更与终止</h2>
+      <ul>
+        <li>我们可能调整条款并在 App 内通知，继续使用视为同意。</li>
+      </ul>
+
+      <h2>【7】法律适用</h2>
+      <ul>
+        <li>条款适用用户所在地法律。如有疑问，请联系：<a href="mailto:chenyisy@gmail.com">chenyisy@gmail.com</a></li>
+      </ul>
     </div>
 
-    <div class="lang-content" id="en" style="display:none">
+    <!-- English -->
+    <div class="lang-content" id="en" lang="en">
       <h1>Terms of Subscription</h1>
-      <p>
-Welcome to Navo. Please read these terms carefully before using the app and its subscription services.
+      <p class="update">Last Updated: October 28, 2025</p>
+      <p>Welcome to Navo! Please read these terms carefully before using the app and its subscription services. By using the service, you agree to these terms.</p>
 
-1. Services Provided:
-- Private Vault: Securely stores private files (photos, videos, etc.) locally;
-- Smart Cleanup: Detects and removes duplicate or unused files to save space;
-- VIP Subscription: Unlocks advanced features, ad-free experience, and priority support.
+      <h2>1) Services Provided</h2>
+      <ul>
+        <li><strong>Private Vault:</strong> On-device AES-GCM encryption for your private photos and videos.</li>
+        <li><strong>Smart Cleanup:</strong> Uses the Vision framework to detect and remove duplicate or unnecessary media to free up space.</li>
+        <li><strong>Image Analysis:</strong> On-device feature extraction and similarity detection.</li>
+        <li><strong>Auto Cleanup:</strong> Automatic cleanup of caches, temporary files, and expired logs.</li>
+        <li><strong>Subscription:</strong> Unlocks advanced features including vault, photo cleanup, and video cleanup.</li>
+      </ul>
 
-2. Subscription & Renewal:
-- We offer auto-renewing subscriptions (weekly/yearly);
-- New users receive a 3-day free trial. The subscription starts automatically unless canceled at least 24 hours before the trial ends;
-- Payment will be charged to your Apple ID and renews 24 hours before each term ends;
-- Manage or cancel any time via Settings > Apple ID > Subscriptions;
-- Free trial available once per Apple ID.
+      <h2>2) Subscription & Auto-Renewal</h2>
+      <ul>
+        <li>Annual subscription only: <strong>$19.99/year</strong>.</li>
+        <li>New users get a 3-day free trial; it renews automatically unless canceled at least 24 hours before the trial ends.</li>
+        <li>Payment is charged to your Apple ID; renewal occurs 24 hours before the current term ends.</li>
+        <li>Manage or cancel via <em>Settings &gt; Apple ID &gt; Subscriptions</em>.</li>
+        <li>Free trial available once per new user.</li>
+      </ul>
 
-3. User Responsibility:
-- Keep your account secure;
-- Do not upload illegal or harmful content.
+      <h2>3) Data & Privacy</h2>
+      <ul>
+        <li>All processing occurs on your device.</li>
+        <li>We do not collect or store your personal photos or videos.</li>
+        <li>We do not collect analytics or usage data.</li>
+        <li>See our Privacy Policy for details.</li>
+      </ul>
 
-4. Refunds:
-- All payments are handled by Apple;
-- Request refunds via Apple (https://reportaproblem.apple.com);
-- No charge occurs if trial is canceled.
+      <h2>4) User Responsibilities</h2>
+      <ul>
+        <li>Keep your account information secure.</li>
+        <li>Do not store illegal content or content that infringes others’ rights.</li>
+      </ul>
 
-5. Modifications:
-- Terms may change and will be announced in-app.
+      <h2>5) Refunds</h2>
+      <ul>
+        <li>All subscription transactions are processed by Apple.</li>
+        <li>Request refunds via Apple at <a href="https://reportaproblem.apple.com/" target="_blank" rel="noopener">reportaproblem.apple.com</a>.</li>
+        <li>No charges if you cancel during the free trial.</li>
+      </ul>
 
-6. Legal:
-- Governed by your local laws. Contact us: chenyisy@gmail.com
-      </p>
+      <h2>6) Changes & Termination</h2>
+      <ul>
+        <li>We may update these terms and notify you in-app; continued use means you agree to the changes.</li>
+      </ul>
+
+      <h2>7) Governing Law</h2>
+      <ul>
+        <li>These terms are governed by the laws of your place of residence. Contact us at <a href="mailto:chenyisy@gmail.com">chenyisy@gmail.com</a>.</li>
+      </ul>
     </div>
 
-    <div class="lang-content" id="ja" style="display:none">
+    <!-- 日本語 -->
+    <div class="lang-content" id="ja" lang="ja">
       <h1>サブスクリプション利用規約</h1>
-      <p>
-Navoをご利用いただきありがとうございます。本アプリとサブスクリプション機能をご利用の前に、本規約をお読みください。
+      <p class="update">最終更新日：2025年10月28日</p>
+      <p>Navo のご利用ありがとうございます。本アプリおよびサブスクリプションを利用する前に、本規約を必ずお読みください。利用開始をもって本規約に同意したものとみなします。</p>
 
-1. 提供サービス：
-- プライベート保管庫：写真や動画を端末内で暗号化して保管；
-- スマートクリーナー：不要または重複したファイルを検出・削除；
-- VIP：全機能の利用、広告なし、優先サポート。
+      <h2>1) 提供サービス</h2>
+      <ul>
+        <li><strong>プライベート保管庫：</strong>端末内 AES-GCM 暗号化で写真・動画を保護。</li>
+        <li><strong>スマートクリーンアップ：</strong>Vision フレームワークにより重複/不要メディアを検出・削除。</li>
+        <li><strong>画像解析：</strong>端末内で特徴量抽出・類似度検出を実行。</li>
+        <li><strong>自動クリーンアップ：</strong>キャッシュ・一時ファイル・期限切れログを自動削除。</li>
+        <li><strong>サブスクリプション：</strong>保管庫、写真/動画クリーンアップ等の上位機能を解放。</li>
+      </ul>
 
-2. サブスクリプションと更新：
-- 自動更新サブスクリプション（週／年）あり；
-- 新規ユーザーは3日間の無料体験あり。終了24時間前までに解約しないと自動的に課金；
-- Apple IDへ課金され、期間終了24時間前に自動更新；
-- [設定] > [Apple ID] > [サブスクリプション] で管理；
-- 無料体験は1 Apple IDに1回限り。
+      <h2>2) サブスクリプションと自動更新</h2>
+      <ul>
+        <li>年額サブスクリプションのみ：<strong>$19.99/年</strong>。</li>
+        <li>新規ユーザーは 3 日間の無料体験。終了 24 時間前までに解約しない場合、自動更新されます。</li>
+        <li>支払いは Apple ID に請求され、更新は期間終了 24 時間前に行われます。</li>
+        <li>[設定] &gt; [Apple ID] &gt; [サブスクリプション] から管理/解約できます。</li>
+        <li>無料体験は新規ユーザー 1 回限りです。</li>
+      </ul>
 
-3. ユーザー責任：
-- アカウント情報を適切に管理；
-- 違法または有害なコンテンツは禁止。
+      <h2>3) データとプライバシー</h2>
+      <ul>
+        <li>処理はすべて端末内で行われます。</li>
+        <li>個人の写真・動画を収集/保存しません。</li>
+        <li>分析データや利用状況データを収集しません。</li>
+        <li>詳細はプライバシーポリシーをご確認ください。</li>
+      </ul>
 
-4. 返金ポリシー：
-- 課金処理はAppleが担当；
-- Apple経由で返金リクエスト可（reportaproblem.apple.com）；
-- 体験中の解約は無料。
+      <h2>4) ユーザーの責任</h2>
+      <ul>
+        <li>アカウント情報の適切な管理。</li>
+        <li>違法または権利侵害となるコンテンツの保存禁止。</li>
+      </ul>
 
-5. 規約変更：
-- 内容変更はアプリ内で告知。
+      <h2>5) 返金ポリシー</h2>
+      <ul>
+        <li>全ての決済は Apple が処理します。</li>
+        <li>返金は Apple の <a href="https://reportaproblem.apple.com/" target="_blank" rel="noopener">reportaproblem.apple.com</a> から申請してください。</li>
+        <li>無料体験期間中に解約した場合、課金は発生しません。</li>
+      </ul>
 
-6. 法的事項：
-- 各国の法令に準拠します。問合せ先：chenyisy@gmail.com
-      </p>
+      <h2>6) 規約の変更・終了</h2>
+      <ul>
+        <li>規約は更新される場合があり、アプリ内で通知します。継続利用により同意したものとみなします。</li>
+      </ul>
+
+      <h2>7) 準拠法</h2>
+      <ul>
+        <li>お住まいの地域の法令に準拠します。お問い合わせ：<a href="mailto:chenyisy@gmail.com">chenyisy@gmail.com</a></li>
+      </ul>
     </div>
 
-    <div class="lang-content" id="fr" style="display:none">
-      <h1>Conditions d'utilisation de l'abonnement</h1>
-      <p>
-Bienvenue sur Navo. Veuillez lire ces conditions avant d'utiliser l'application et ses abonnements.
+    <!-- Français -->
+    <div class="lang-content" id="fr" lang="fr">
+      <h1>Conditions d'abonnement</h1>
+      <p class="update">Dernière mise à jour : 28 octobre 2025</p>
+      <p>Bienvenue sur Navo ! Avant d’utiliser l’application et ses services d’abonnement, veuillez lire attentivement ces conditions. En utilisant le service, vous les acceptez.</p>
 
-1. Services proposés :
-- Coffre privé : stocke localement vos fichiers (photos, vidéos) en toute sécurité ;
-- Nettoyage intelligent : identifie et supprime les fichiers en double ;
-- Abonnement VIP : débloque toutes les fonctionnalités, sans publicité, support prioritaire.
+      <h2>1) Services proposés</h2>
+      <ul>
+        <li><strong>Coffre privé :</strong> chiffrement local AES-GCM pour vos photos et vidéos.</li>
+        <li><strong>Nettoyage intelligent :</strong> framework Vision pour détecter/supprimer les médias en double ou inutiles.</li>
+        <li><strong>Analyse d’images :</strong> extraction locale de caractéristiques et détection de similarité.</li>
+        <li><strong>Nettoyage automatique :</strong> purge des caches, fichiers temporaires et journaux expirés.</li>
+        <li><strong>Abonnement :</strong> déverrouille les fonctions avancées (coffre, nettoyage photo/vidéo, etc.).</li>
+      </ul>
 
-2. Abonnement & renouvellement :
-- Abonnement hebdomadaire/annuel avec renouvellement automatique ;
-- 3 jours d'essai gratuit pour les nouveaux utilisateurs ;
-- Le paiement est facturé via Apple ID, renouvelé 24h avant la fin ;
-- Gestion via Réglages > Identifiant Apple > Abonnements ;
-- Essai gratuit une seule fois par Apple ID.
+      <h2>2) Abonnement & renouvellement automatique</h2>
+      <ul>
+        <li>Abonnement annuel uniquement : <strong>19,99 $ / an</strong>.</li>
+        <li>Essai gratuit de 3 jours pour les nouveaux utilisateurs ; renouvellement automatique sauf annulation 24 h avant la fin de l’essai.</li>
+        <li>Paiement via votre identifiant Apple ; le renouvellement intervient 24 h avant la fin de la période.</li>
+        <li>Gérez/annulez via <em>Réglages &gt; Identifiant Apple &gt; Abonnements</em>.</li>
+        <li>Essai gratuit valable une seule fois pour les nouveaux utilisateurs.</li>
+      </ul>
 
-3. Responsabilités de l'utilisateur :
-- Protéger votre compte ;
-- Ne pas stocker de contenu illégal.
+      <h2>3) Données & confidentialité</h2>
+      <ul>
+        <li>Tous les traitements sont effectués sur l’appareil.</li>
+        <li>Nous ne collectons ni ne stockons vos photos ou vidéos personnelles.</li>
+        <li>Nous ne collectons pas d’analyses ni de données d’usage.</li>
+        <li>Consultez notre Politique de Confidentialité pour plus de détails.</li>
+      </ul>
 
-4. Politique de remboursement :
-- Apple gère tous les paiements ;
-- Les demandes de remboursement se font via Apple (reportaproblem.apple.com).
+      <h2>4) Responsabilités de l’utilisateur</h2>
+      <ul>
+        <li>Protéger les informations de votre compte.</li>
+        <li>Ne pas stocker de contenu illégal ou portant atteinte aux droits d’autrui.</li>
+      </ul>
 
-5. Modifications :
-- Toute mise à jour sera notifiée dans l'application.
+      <h2>5) Remboursements</h2>
+      <ul>
+        <li>Toutes les transactions sont gérées par Apple.</li>
+        <li>Demandez un remboursement via <a href="https://reportaproblem.apple.com/" target="_blank" rel="noopener">reportaproblem.apple.com</a>.</li>
+        <li>Aucun frais si vous annulez pendant l’essai gratuit.</li>
+      </ul>
 
-6. Législation :
-- Sous réserve des lois locales. Contact : chenyisy@gmail.com
-      </p>
+      <h2>6) Modifications & résiliation</h2>
+      <ul>
+        <li>Nous pouvons modifier ces conditions et vous en informer dans l’app ; l’utilisation continue vaut acceptation.</li>
+      </ul>
+
+      <h2>7) Droit applicable</h2>
+      <ul>
+        <li>Soumises aux lois de votre lieu de résidence. Contact : <a href="mailto:chenyisy@gmail.com">chenyisy@gmail.com</a></li>
+      </ul>
     </div>
 
-    <div class="lang-content" id="es" style="display:none">
+    <!-- Español -->
+    <div class="lang-content" id="es" lang="es">
       <h1>Términos del servicio de suscripción</h1>
-      <p>
-Bienvenido a Navo. Lea atentamente estos términos antes de usar la app y su suscripción.
+      <p class="update">Última actualización: 28 de octubre de 2025</p>
+      <p>Bienvenido a Navo. Lea atentamente estos términos antes de usar la app y sus servicios de suscripción. Al usar el servicio, usted acepta estos términos.</p>
 
-1. Servicios ofrecidos:
-- Caja privada: almacenamiento cifrado local de fotos y videos;
-- Limpieza inteligente: elimina archivos duplicados o inútiles;
-- Suscripción VIP: acceso completo, sin anuncios, soporte prioritario.
+      <h2>1) Servicios ofrecidos</h2>
+      <ul>
+        <li><strong>Caja privada:</strong> cifrado local AES-GCM para sus fotos y videos.</li>
+        <li><strong>Limpieza inteligente:</strong> usa el framework Vision para detectar y eliminar medios duplicados o innecesarios.</li>
+        <li><strong>Análisis de imágenes:</strong> extracción de características y detección de similitud en el dispositivo.</li>
+        <li><strong>Limpieza automática:</strong> depuración de cachés, archivos temporales y registros caducados.</li>
+        <li><strong>Suscripción:</strong> desbloquea funciones avanzadas como bóveda, limpieza de fotos y de videos.</li>
+      </ul>
 
-2. Suscripción y renovación:
-- Ofrecemos suscripciones semanales/anuales con renovación automática;
-- 3 días de prueba gratuita para nuevos usuarios;
-- Cargo vía Apple ID y renovación 24h antes de la expiración;
-- Gestión desde Configuración > Apple ID > Suscripciones;
-- Prueba gratuita solo una vez por Apple ID.
+      <h2>2) Suscripción y renovación automática</h2>
+      <ul>
+        <li>Solo suscripción anual: <strong>US$19.99/año</strong>.</li>
+        <li>Los usuarios nuevos obtienen 3 días de prueba; se renueva automáticamente salvo cancelación con 24 h de antelación.</li>
+        <li>El pago se carga a su Apple ID; la renovación ocurre 24 h antes de que finalice el período.</li>
+        <li>Gestione o cancele en <em>Ajustes &gt; Apple ID &gt; Suscripciones</em>.</li>
+        <li>La prueba gratuita está disponible una sola vez para usuarios nuevos.</li>
+      </ul>
 
-3. Responsabilidades:
-- Mantenga la seguridad de su cuenta;
-- No almacene contenido ilegal o perjudicial.
+      <h2>3) Datos y privacidad</h2>
+      <ul>
+        <li>Todo el procesamiento ocurre en su dispositivo.</li>
+        <li>No recopilamos ni almacenamos sus fotos o videos personales.</li>
+        <li>No recopilamos analíticas ni datos de uso.</li>
+        <li>Consulte nuestra Política de Privacidad para más detalles.</li>
+      </ul>
 
-4. Reembolsos:
-- Apple procesa todos los pagos;
-- Solicite reembolsos a través de Apple (reportaproblem.apple.com).
+      <h2>4) Responsabilidades del usuario</h2>
+      <ul>
+        <li>Mantenga segura la información de su cuenta.</li>
+        <li>No almacene contenido ilegal ni que infrinja derechos de terceros.</li>
+      </ul>
 
-5. Cambios:
-- Se informará en la app si hay modificaciones.
+      <h2>5) Reembolsos</h2>
+      <ul>
+        <li>Apple gestiona todas las transacciones.</li>
+        <li>Solicite reembolsos a través de <a href="https://reportaproblem.apple.com/" target="_blank" rel="noopener">reportaproblem.apple.com</a>.</li>
+        <li>No hay cargos si cancela durante la prueba gratuita.</li>
+      </ul>
 
-6. Legal:
-- Sujeto a leyes locales. Contacto: chenyisy@gmail.com
-      </p>
+      <h2>6) Cambios y terminación</h2>
+      <ul>
+        <li>Podemos actualizar estos términos y notificarlo en la app; el uso continuo implica aceptación.</li>
+      </ul>
+
+      <h2>7) Legislación aplicable</h2>
+      <ul>
+        <li>Se aplica la ley de su lugar de residencia. Contacto: <a href="mailto:chenyisy@gmail.com">chenyisy@gmail.com</a></li>
+      </ul>
     </div>
   </div>
 
@@ -259,13 +359,13 @@ Bienvenido a Navo. Lea atentamente estos términos antes de usar la app y su sus
       document.querySelectorAll(".lang-content").forEach(el => el.style.display = "none");
       const target = document.getElementById(lang);
       if (target) target.style.display = "block";
+      document.documentElement.lang = (lang === 'zh' ? 'zh-CN' : lang);
+      document.getElementById("lang-select").value = lang;
     }
-
     window.onload = () => {
-      const langMap = { zh: 'zh', en: 'en', ja: 'ja', fr: 'fr', es: 'es' };
-      const browserLang = navigator.language.slice(0, 2).toLowerCase();
+      const langMap = { zh:'zh', en:'en', ja:'ja', fr:'fr', es:'es' };
+      const browserLang = (navigator.language || 'en').slice(0,2).toLowerCase();
       const defaultLang = langMap[browserLang] || 'en';
-      document.getElementById("lang-select").value = defaultLang;
       switchLang(defaultLang);
     };
   </script>
