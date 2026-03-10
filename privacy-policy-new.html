@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-  <meta name="description" content="Navo隐私政策 — 本地处理、加密存储、绝不收集个人身份信息。您的数据，只属于您。">
+  <meta name="description" content="Navo 隐私政策：本地处理、加密存储、不上传服务器。您的照片、视频与隐私数据，仅保留在您的设备上。">
   <title>隐私政策 · Navo</title>
   <style>
     * {
@@ -11,38 +11,64 @@
       padding: 0;
       box-sizing: border-box;
     }
+
+    :root {
+      --bg: #f5f8fe;
+      --card: #ffffff;
+      --text: #1e2b45;
+      --muted: #6b7d9c;
+      --line: #e8eef8;
+      --blue: #2e6edf;
+      --blue-dark: #173b73;
+      --blue-soft: #eef5ff;
+      --shadow: 0 12px 30px rgba(0, 25, 70, 0.08);
+      --radius-lg: 28px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
-      background: #f5f8fe;
-      color: #1e2b45;
-      line-height: 1.6;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: linear-gradient(180deg, #f7faff 0%, #f3f7fd 100%);
+      color: var(--text);
+      line-height: 1.72;
       padding: 20px 16px 40px;
     }
+
     .lang-panel {
-      max-width: 820px;
+      max-width: 920px;
       margin: 0 auto 16px;
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      background: white;
-      padding: 10px 24px;
-      border-radius: 60px;
-      box-shadow: 0 4px 12px rgba(0,30,70,0.04);
+      gap: 12px;
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      padding: 10px 20px;
+      border-radius: 999px;
+      box-shadow: 0 4px 12px rgba(0, 30, 70, 0.05);
+      border: 1px solid rgba(215, 226, 244, 0.8);
     }
+
     .lang-panel label {
       font-size: 0.95rem;
-      font-weight: 500;
+      font-weight: 600;
       color: #3e5e8a;
-      margin-right: 12px;
     }
+
     .lang-panel select {
       font-size: 1rem;
-      padding: 8px 16px 8px 12px;
-      border-radius: 40px;
+      padding: 8px 40px 8px 12px;
+      border-radius: 999px;
       border: 1px solid #d6e0f0;
-      background-color: white;
-      font-weight: 500;
-      color: #1e2b45;
+      background-color: #fff;
+      font-weight: 600;
+      color: var(--text);
       cursor: pointer;
       transition: border-color 0.2s, box-shadow 0.2s;
       appearance: none;
@@ -50,364 +76,821 @@
       background-repeat: no-repeat;
       background-position: right 12px center;
       background-size: 16px;
-      padding-right: 40px;
+      min-width: 170px;
     }
+
     .lang-panel select:focus {
       outline: none;
-      border-color: #2e6edf;
-      box-shadow: 0 0 0 3px rgba(46,110,223,0.15);
+      border-color: var(--blue);
+      box-shadow: 0 0 0 4px rgba(46, 110, 223, 0.12);
     }
+
     .policy-card {
-      max-width: 820px;
+      max-width: 920px;
       margin: 0 auto;
-      background: #ffffff;
-      border-radius: 28px;
-      padding: 42px 40px;
-      box-shadow: 0 12px 30px rgba(0,25,70,0.08);
-      transition: padding 0.2s;
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      padding: 42px 40px 34px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(227, 236, 250, 0.9);
     }
-    @media (max-width: 600px) {
-      body { padding: 12px 12px 24px; }
-      .lang-panel { padding: 8px 16px; }
-      .policy-card { padding: 28px 20px; border-radius: 24px; }
-    }
+
     .lang-content {
       display: none;
     }
+
     .lang-content.active {
       display: block;
     }
+
+    .hero {
+      margin-bottom: 28px;
+    }
+
     h1 {
-      font-size: 2.2rem;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      margin: 0 0 6px 0;
-      background: linear-gradient(145deg, #1e3a6b, #2e5faa);
+      font-size: 2.3rem;
+      font-weight: 760;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+      background: linear-gradient(145deg, #173764, #2e66be);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
+
     .last-updated {
       font-size: 1rem;
-      color: #6b7d9c;
-      margin-bottom: 28px;
-      border-bottom: 1px solid #eef3fc;
-      padding-bottom: 16px;
+      color: var(--muted);
+      margin-bottom: 18px;
     }
+
+    .intro {
+      font-size: 1.06rem;
+      color: #223656;
+      margin-bottom: 0;
+    }
+
+    .summary-box {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin: 24px 0 8px;
+    }
+
+    .summary-item {
+      background: linear-gradient(180deg, #f8fbff 0%, #f1f7ff 100%);
+      border: 1px solid #e4eefc;
+      border-radius: 18px;
+      padding: 16px 16px 14px;
+    }
+
+    .summary-item .kicker {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--blue);
+      background: #e8f1ff;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+
+    .summary-item p {
+      margin: 0;
+      font-size: 0.98rem;
+      color: #243a5f;
+    }
+
     h2 {
-      font-size: 1.6rem;
-      font-weight: 620;
-      margin: 32px 0 14px 0;
+      font-size: 1.38rem;
+      font-weight: 730;
+      margin: 34px 0 14px;
       color: #153057;
-      line-height: 1.3;
+      line-height: 1.35;
     }
+
     p, li {
-      font-size: 1.05rem;
+      font-size: 1.03rem;
       color: #1f314b;
+    }
+
+    p {
       margin-bottom: 12px;
     }
+
     ul, ol {
-      padding-left: 24px;
-      margin: 12px 0 18px;
+      padding-left: 22px;
+      margin: 10px 0 16px;
     }
+
     li {
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
+
     strong {
       color: #1e4f9c;
-      font-weight: 600;
+      font-weight: 650;
     }
+
     table {
       width: 100%;
       border-collapse: collapse;
-      margin: 20px 0 24px;
+      margin: 18px 0 22px;
       border-radius: 18px;
       overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,30,70,0.06);
+      box-shadow: 0 2px 10px rgba(0, 30, 70, 0.06);
+      border: 1px solid #e7eefb;
     }
+
     th {
-      background-color: #f2f8ff;
+      background: #f3f8ff;
       color: #1f3d6b;
-      font-weight: 600;
-      font-size: 1rem;
+      font-weight: 700;
+      font-size: 0.98rem;
       padding: 14px 16px;
       text-align: left;
-      border-bottom: 2px solid #dde7f5;
+      border-bottom: 1px solid #dde7f5;
     }
+
     td {
-      background-color: white;
+      background: #fff;
       padding: 14px 16px;
       border-bottom: 1px solid #e7eefb;
-      font-size: 1rem;
+      font-size: 0.98rem;
+      vertical-align: top;
     }
+
     tr:last-child td {
       border-bottom: none;
     }
-    .permission-note {
+
+    .note-box {
       background: #f7faff;
-      border-radius: 14px;
-      padding: 16px 20px;
-      margin: 20px 0 12px;
-      border-left: 4px solid #2e6edf;
+      border-radius: 16px;
+      padding: 16px 18px;
+      margin: 18px 0 4px;
+      border: 1px solid #e1ebfb;
+      border-left: 4px solid var(--blue);
     }
-    .badge {
-      background: #e9f2ff;
-      color: #1e4f9c;
-      font-weight: 500;
-      font-size: 0.85rem;
-      border-radius: 40px;
-      padding: 4px 12px;
-      display: inline-block;
-      margin-right: 6px;
+
+    .note-box p {
+      margin: 0;
+      color: #284165;
     }
+
     a {
       color: #1e5dcc;
       text-decoration: none;
-      font-weight: 500;
+      font-weight: 600;
       border-bottom: 1px dotted #a0bceb;
     }
+
     a:hover {
       color: #0a3a7a;
       border-bottom: 1px solid #0a3a7a;
     }
+
     hr {
-      margin: 40px 0 0;
+      margin: 34px 0 0;
       border: none;
-      border-top: 2px solid #ecf2fc;
+      border-top: 1px solid var(--line);
     }
+
     .footer-note {
       font-size: 0.95rem;
       color: #6f80a0;
       text-align: center;
-      margin-top: 26px;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 760px) {
+      .summary-box {
+        grid-template-columns: 1fr;
+      }
+
+      .policy-card {
+        padding: 28px 20px 26px;
+        border-radius: 24px;
+      }
+
+      h1 {
+        font-size: 1.95rem;
+      }
+
+      h2 {
+        font-size: 1.24rem;
+      }
+
+      p, li, td, th {
+        font-size: 0.98rem;
+      }
+
+      .lang-panel {
+        padding: 8px 14px;
+      }
+
+      .lang-panel select {
+        min-width: 140px;
+      }
     }
   </style>
 </head>
 <body>
-<div class="lang-panel">
-  <label for="langSwitcher">🌐 语言</label>
-  <select id="langSwitcher" aria-label="切换语言 / Switch language">
-    <option value="zh" selected>中文 · 简体</option>
-    <option value="en">English</option>
-    <option value="ja">日本語</option>
-    <option value="fr">Français</option>
-    <option value="es">Español</option>
-  </select>
-</div>
-
-<div class="policy-card">
-  <!-- 中文 (简体) -->
-  <div id="policy-zh" class="lang-content active" lang="zh-CN">
-    <h1>隐私政策</h1>
-    <div class="last-updated">最后更新：2025年10月28日</div>
-    <p>Navo（以下简称“我们”）非常重视您的隐私。本隐私政策旨在说明您在使用我们的移动应用程序时，我们如何收集、使用、存储和保护您的信息。</p>
-
-    <h2>一、我们收集的信息</h2>
-    <ul>
-      <li><strong>照片与视频：</strong>仅在您授权的情况下访问，所有操作均在本地完成。</li>
-      <li><strong>相机与麦克风：</strong>用于拍摄、录制并加密存储于隐私保险箱。</li>
-      <li><strong>设备信息：</strong>仅用于提升产品性能，不涉及身份信息。</li>
-      <li><strong>订阅信息：</strong>仅用于验证您的订阅状态。</li>
-    </ul>
-
-    <h2>二、我们如何使用您的信息</h2>
-    <ul>
-      <li>实现和维护核心功能；</li>
-      <li>提供智能清理建议；</li>
-      <li>订阅管理与验证；</li>
-      <li>隐私保险箱验证；</li>
-      <li>性能优化与错误修复。</li>
-    </ul>
-
-    <h2>三、图像分析功能</h2>
-    <ul>
-      <li><strong>相似内容检测：</strong>使用 Vision 框架提取图像特征向量，识别相似照片和视频；</li>
-      <li><strong>内容分类：</strong>自动识别 Live Photo、连拍照片、截图等媒体类型；</li>
-      <li><strong>本地处理：</strong>所有分析均在设备本地完成；</li>
-      <li><strong>特征存储：</strong>为提升性能，在本地存储图像特征向量。</li>
-    </ul>
-
-    <h2>四、权限请求</h2>
-    <table>
-      <tr><th>权限</th><th>用途</th><th>必需</th></tr>
-      <tr><td>照片库</td><td>清理建议、导入</td><td>必须</td></tr>
-      <tr><td>添加到照片库</td><td>保存文件</td><td>可选</td></tr>
-      <tr><td>相机</td><td>拍摄隐私内容</td><td>可选</td></tr>
-      <tr><td>麦克风</td><td>录音（视频）</td><td>可选</td></tr>
-    </table>
-
-    <h2>五、数据保留与安全</h2>
-    <ul>
-      <li><strong>本地存储：</strong>所有数据均保留在您的设备本地，绝不会上传到服务器或第三方；</li>
-      <li><strong>加密算法：</strong>使用 AES-GCM 256 位加密算法保护所有存储数据；</li>
-      <li><strong>密钥管理：</strong>采用 PBKDF2 密钥派生，100,000 次迭代增强安全性；</li>
-      <li><strong>会话管理：</strong>5 分钟无操作自动锁定，保护隐私数据；</li>
-      <li><strong>完整性验证：</strong>使用 SHA256 哈希验证数据完整性；</li>
-      <li><strong>自动清理：</strong>系统自动清理缓存、临时文件和过期日志。</li>
-    </ul>
-
-    <h2>六、数据保留政策</h2>
-    <ul>
-      <li><strong>本地存储：</strong>数据永久保留在您的设备上，直到您主动删除；</li>
-      <li><strong>卸载应用：</strong>卸载应用将删除所有本地数据；</li>
-      <li><strong>特征数据：</strong>为提升性能生成的特征向量会在设备上保留；</li>
-      <li><strong>缓存清理：</strong>应用会自动清理临时文件和缓存。</li>
-    </ul>
-
-    <h2>七、第三方服务</h2>
-    <p>本应用不集成任何第三方分析、广告或跟踪服务，仅使用苹果官方的订阅服务。</p>
-
-    <h2>八、您的权利</h2>
-    <p>您可在系统设置中撤销权限，或通过卸载 App 删除所有本地数据。如有问题请联系：<a href="mailto:chenyisy@gmail.com">chenyisy@gmail.com</a>。</p>
-
-    <h2>九、儿童隐私</h2>
-    <p>我们不会有意收集 13 岁以下儿童的信息。</p>
-
-    <h2>十、国际法规遵守</h2>
-    <p>我们遵守包括 GDPR、CCPA 在内的适用法规，保障您的权利。</p>
-
-    <h2>十一、政策更新</h2>
-    <p>如本政策有更新，我们将在 App 内通知您。</p>
-
-    <hr>
-    <div class="footer-note">Navo © 2025 · 本地优先 · 隐私至上</div>
+  <div class="lang-panel">
+    <label for="langSwitcher">🌐 语言</label>
+    <select id="langSwitcher" aria-label="切换语言 / Switch language">
+      <option value="zh" selected>中文 · 简体</option>
+      <option value="en">English</option>
+      <option value="ja">日本語</option>
+      <option value="fr">Français</option>
+      <option value="es">Español</option>
+    </select>
   </div>
 
-  <!-- English -->
-  <div id="policy-en" class="lang-content" lang="en">
-    <h1>Privacy Policy</h1>
-    <div class="last-updated">Last Updated: October 28, 2025</div>
-    <p>Navo (“we” or “us”) values your privacy. This policy describes how we collect, use, store, and protect your information when you use our mobile application.</p>
+  <div class="policy-card">
+    <!-- 中文 -->
+    <div id="policy-zh" class="lang-content active" lang="zh-CN" data-title="隐私政策 · Navo" data-description="Navo 隐私政策：本地处理、加密存储、不上传服务器。您的照片、视频与隐私数据，仅保留在您的设备上。">
+      <div class="hero">
+        <h1>隐私政策</h1>
+        <div class="last-updated">最后更新：2025年10月28日</div>
+        <p class="intro">Navo（以下简称“我们”）非常重视您的隐私。本隐私政策旨在说明您在使用我们的移动应用程序时，我们如何收集、使用、存储和保护您的信息。</p>
 
-    <h2>1. Information We Collect</h2>
-    <ul>
-      <li><strong>Photos & Videos:</strong> Accessed only with your permission, processed entirely on-device.</li>
-      <li><strong>Camera & Microphone:</strong> Used to capture and encrypt private media stored in the vault.</li>
-      <li><strong>Device Information:</strong> Used solely to improve performance; no personal identifiers.</li>
-      <li><strong>Subscription Information:</strong> Used only to verify your subscription status.</li>
-    </ul>
+        <div class="summary-box">
+          <div class="summary-item">
+            <span class="kicker">本地优先</span>
+            <p>照片、视频及相关分析均在设备本地完成，不上传至服务器。</p>
+          </div>
+          <div class="summary-item">
+            <span class="kicker">加密保护</span>
+            <p>隐私内容采用 AES-GCM 256 位加密存储，并结合 PBKDF2 强化密钥安全。</p>
+          </div>
+          <div class="summary-item">
+            <span class="kicker">最小必要</span>
+            <p>仅在功能需要且经您授权时访问相关权限，不收集不必要的身份信息。</p>
+          </div>
+        </div>
+      </div>
 
-    <h2>2. How We Use Your Information</h2>
-    <ul><li>Provide and maintain core features</li><li>Smart cleanup suggestions</li><li>Subscription management & verification</li><li>Private vault authentication</li><li>Performance optimization & bug fixes</li></ul>
+      <h2>一、我们收集的信息</h2>
+      <ul>
+        <li><strong>照片与视频：</strong>仅在您授权的情况下访问，用于清理建议、导入与本地分析，所有操作均在设备本地完成。</li>
+        <li><strong>相机与麦克风：</strong>仅在您主动使用相关功能时调用，用于拍摄、录制并加密存储于隐私保险箱。</li>
+        <li><strong>设备信息：</strong>仅用于提升产品性能、兼容性和稳定性，不涉及个人身份信息。</li>
+        <li><strong>订阅信息：</strong>仅用于验证您的订阅状态及管理订阅功能。</li>
+      </ul>
 
-    <h2>3. Image Analysis Features</h2>
-    <ul><li><strong>Similarity detection:</strong> Uses Vision framework to extract feature vectors and identify similar photos/videos.</li><li><strong>Content classification:</strong> Automatically detects Live Photos, bursts, screenshots, etc.</li><li><strong>On‑device processing:</strong> All analysis is performed locally.</li><li><strong>Feature storage:</strong> Feature vectors may be stored locally to enhance performance.</li></ul>
+      <h2>二、我们如何使用您的信息</h2>
+      <ul>
+        <li>实现、提供并维护应用的核心功能；</li>
+        <li>提供智能清理建议与媒体整理能力；</li>
+        <li>进行订阅管理与订阅状态验证；</li>
+        <li>支持隐私保险箱的访问验证与安全保护；</li>
+        <li>进行性能优化、兼容性提升与错误修复。</li>
+      </ul>
 
-    <h2>4. Permissions Requested</h2>
-    <table><tr><th>Permission</th><th>Purpose</th><th>Required</th></tr><tr><td>Photo Library</td><td>Cleanup suggestions, import</td><td>Yes</td></tr><tr><td>Add to Library</td><td>Save files</td><td>Optional</td></tr><tr><td>Camera</td><td>Capture private content</td><td>Optional</td></tr><tr><td>Microphone</td><td>Audio recording (video)</td><td>Optional</td></tr></table>
+      <h2>三、图像分析功能</h2>
+      <ul>
+        <li><strong>相似内容检测：</strong>使用 Vision 框架提取图像特征向量，以识别相似照片和视频。</li>
+        <li><strong>内容分类：</strong>自动识别 Live Photo、连拍照片、截图等媒体类型。</li>
+        <li><strong>本地处理：</strong>所有分析均在您的设备本地完成，不会上传至服务器。</li>
+        <li><strong>特征存储：</strong>为提升性能，应用会在设备本地存储图像特征向量。</li>
+      </ul>
 
-    <h2>5. Data Retention & Security</h2>
-    <ul><li><strong>Local storage:</strong> All data stays on your device, never uploaded to any server or third party.</li><li><strong>Encryption:</strong> AES‑GCM 256‑bit for all stored data.</li><li><strong>Key management:</strong> PBKDF2 with 100,000 iterations.</li><li><strong>Session lock:</strong> Auto‑lock after 5 minutes of inactivity.</li><li><strong>Integrity:</strong> SHA‑256 hashing to verify data integrity.</li><li><strong>Auto cleanup:</strong> System automatically removes cache, temp files, and expired logs.</li></ul>
+      <div class="note-box">
+        <p><strong>说明：</strong>图像分析仅用于实现相似内容检测、媒体分类与性能优化，不用于广告、跟踪或画像分析。</p>
+      </div>
 
-    <h2>6. Data Retention Policy</h2>
-    <ul><li><strong>On‑device:</strong> Data persists until you delete it.</li><li><strong>App uninstall:</strong> Removes all local data.</li><li><strong>Feature vectors:</strong> May remain locally for performance reasons.</li><li><strong>Cache cleanup:</strong> Performed automatically.</li></ul>
+      <h2>四、权限请求</h2>
+      <table>
+        <tr>
+          <th>权限</th>
+          <th>用途</th>
+          <th>是否必需</th>
+        </tr>
+        <tr>
+          <td>照片库</td>
+          <td>用于清理建议、媒体导入与本地分析</td>
+          <td>必须</td>
+        </tr>
+        <tr>
+          <td>添加到照片库</td>
+          <td>用于保存文件或导出媒体</td>
+          <td>可选</td>
+        </tr>
+        <tr>
+          <td>相机</td>
+          <td>用于拍摄并保存隐私内容</td>
+          <td>可选</td>
+        </tr>
+        <tr>
+          <td>麦克风</td>
+          <td>用于视频录制中的音频采集</td>
+          <td>可选</td>
+        </tr>
+      </table>
 
-    <h2>7. Third‑Party Services</h2>
-    <p>No third‑party analytics, ads, or trackers. Only Apple’s official subscription services are used.</p>
+      <h2>五、数据保留与安全</h2>
+      <ul>
+        <li><strong>本地存储：</strong>所有数据均保留在您的设备本地，绝不会上传到我们的服务器或第三方。</li>
+        <li><strong>加密算法：</strong>我们使用 AES-GCM 256 位加密算法保护存储数据。</li>
+        <li><strong>密钥管理：</strong>采用 PBKDF2 密钥派生机制，并使用 100,000 次迭代增强安全性。</li>
+        <li><strong>会话管理：</strong>在 5 分钟无操作后自动锁定，以保护隐私数据安全。</li>
+        <li><strong>完整性验证：</strong>使用 SHA256 哈希验证数据完整性。</li>
+        <li><strong>自动清理：</strong>系统会自动清理缓存、临时文件和过期日志。</li>
+      </ul>
 
-    <h2>8. Your Rights</h2>
-    <p>You may revoke permissions in system settings or delete the app to erase all local data. Contact: <a href="mailto:chenyisy@gmail.com">chenyisy@gmail.com</a>.</p>
+      <h2>六、数据保留政策</h2>
+      <ul>
+        <li><strong>本地存储：</strong>相关数据将持续保留在您的设备上，直至您主动删除。</li>
+        <li><strong>卸载应用：</strong>卸载应用后，保存在应用本地容器中的数据将被删除。</li>
+        <li><strong>特征数据：</strong>为提升性能生成的特征向量会保留在设备本地。</li>
+        <li><strong>缓存清理：</strong>应用会自动清理缓存和临时文件。</li>
+      </ul>
 
-    <h2>9. Children’s Privacy</h2>
-    <p>We do not knowingly collect information from children under 13.</p>
+      <h2>七、第三方服务</h2>
+      <p>本应用不集成任何第三方分析、广告或跟踪服务。订阅相关能力仅依赖苹果官方提供的订阅服务。</p>
 
-    <h2>10. International Compliance</h2>
-    <p>We comply with applicable regulations including GDPR and CCPA.</p>
+      <h2>八、您的权利</h2>
+      <p>您可随时在系统设置中撤销相关权限，也可通过卸载 App 删除所有本地数据。如对本政策有任何疑问，请联系：<a href="mailto:chenyisy@gmail.com">chenyisy@gmail.com</a>。</p>
 
-    <h2>11. Policy Updates</h2>
-    <p>We will notify you in‑app of any updates.</p>
-    <hr><div class="footer-note">Navo © 2025 · Local first · Privacy by design</div>
+      <h2>九、儿童隐私</h2>
+      <p>我们不会有意收集 13 岁以下儿童的信息。</p>
+
+      <h2>十、国际法规遵守</h2>
+      <p>我们遵守包括 GDPR、CCPA 在内的适用法律法规，并尊重和保障您的相关权利。</p>
+
+      <h2>十一、政策更新</h2>
+      <p>如本隐私政策发生更新，我们将在 App 内向您进行通知。</p>
+
+      <hr>
+      <div class="footer-note">Navo © 2025 · 本地优先 · 隐私至上</div>
+    </div>
+
+    <!-- English -->
+    <div id="policy-en" class="lang-content" lang="en" data-title="Privacy Policy · Navo" data-description="Navo Privacy Policy: on-device processing, encrypted local storage, and no server uploads. Your photos and private data stay on your device.">
+      <div class="hero">
+        <h1>Privacy Policy</h1>
+        <div class="last-updated">Last Updated: October 28, 2025</div>
+        <p class="intro">Navo (“we”, “us”, or “our”) values your privacy. This Privacy Policy explains how we collect, use, store, and protect your information when you use our mobile application.</p>
+
+        <div class="summary-box">
+          <div class="summary-item">
+            <span class="kicker">On-device First</span>
+            <p>Your photos, videos, and related analysis stay on your device and are not uploaded to our servers.</p>
+          </div>
+          <div class="summary-item">
+            <span class="kicker">Encrypted Storage</span>
+            <p>Private content is protected with AES-GCM 256-bit encryption and strengthened with PBKDF2 key derivation.</p>
+          </div>
+          <div class="summary-item">
+            <span class="kicker">Minimal Access</span>
+            <p>Permissions are requested only when needed for core features and only with your authorization.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2>1. Information We Collect</h2>
+      <ul>
+        <li><strong>Photos &amp; Videos:</strong> Accessed only with your permission for cleanup suggestions, import, and on-device analysis.</li>
+        <li><strong>Camera &amp; Microphone:</strong> Used only when you actively use capture features to record and encrypt private content in the vault.</li>
+        <li><strong>Device Information:</strong> Used solely to improve performance, compatibility, and stability, without personal identifiers.</li>
+        <li><strong>Subscription Information:</strong> Used only to verify subscription status and manage subscription-related features.</li>
+      </ul>
+
+      <h2>2. How We Use Your Information</h2>
+      <ul>
+        <li>To provide and maintain core app functionality</li>
+        <li>To offer smart cleanup suggestions and media organization features</li>
+        <li>To manage subscriptions and verify subscription status</li>
+        <li>To support private vault authentication and security protection</li>
+        <li>To improve performance, compatibility, and fix errors</li>
+      </ul>
+
+      <h2>3. Image Analysis Features</h2>
+      <ul>
+        <li><strong>Similarity Detection:</strong> Uses Apple’s Vision framework to extract feature vectors and identify similar photos and videos.</li>
+        <li><strong>Content Classification:</strong> Automatically identifies media types such as Live Photos, burst photos, and screenshots.</li>
+        <li><strong>On-device Processing:</strong> All analysis is performed locally on your device.</li>
+        <li><strong>Feature Storage:</strong> Feature vectors may be stored locally on your device to improve performance.</li>
+      </ul>
+
+      <div class="note-box">
+        <p><strong>Note:</strong> Image analysis is used only for similarity detection, media classification, and performance optimization. It is not used for advertising, tracking, or profiling.</p>
+      </div>
+
+      <h2>4. Permissions Requested</h2>
+      <table>
+        <tr>
+          <th>Permission</th>
+          <th>Purpose</th>
+          <th>Required</th>
+        </tr>
+        <tr>
+          <td>Photo Library</td>
+          <td>Cleanup suggestions, import, and on-device analysis</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Add to Photo Library</td>
+          <td>Save files or export media</td>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <td>Camera</td>
+          <td>Capture and store private content</td>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <td>Microphone</td>
+          <td>Audio recording during video capture</td>
+          <td>Optional</td>
+        </tr>
+      </table>
+
+      <h2>5. Data Retention &amp; Security</h2>
+      <ul>
+        <li><strong>Local Storage:</strong> All data remains on your device and is never uploaded to our servers or any third party.</li>
+        <li><strong>Encryption:</strong> AES-GCM 256-bit encryption is used to protect stored data.</li>
+        <li><strong>Key Management:</strong> PBKDF2 key derivation with 100,000 iterations is used to enhance security.</li>
+        <li><strong>Session Management:</strong> The app automatically locks after 5 minutes of inactivity.</li>
+        <li><strong>Integrity Verification:</strong> SHA-256 hashing is used to verify data integrity.</li>
+        <li><strong>Automatic Cleanup:</strong> Cache, temporary files, and expired logs are automatically removed.</li>
+      </ul>
+
+      <h2>6. Data Retention Policy</h2>
+      <ul>
+        <li><strong>On-device Storage:</strong> Data remains on your device until you delete it.</li>
+        <li><strong>App Uninstall:</strong> Uninstalling the app removes data stored in the app’s local container.</li>
+        <li><strong>Feature Data:</strong> Feature vectors generated for performance may remain locally on your device.</li>
+        <li><strong>Cache Cleanup:</strong> Temporary files and cache are cleaned automatically.</li>
+      </ul>
+
+      <h2>7. Third-Party Services</h2>
+      <p>This app does not integrate third-party analytics, advertising, or tracking services. Subscription-related features rely only on Apple’s official subscription services.</p>
+
+      <h2>8. Your Rights</h2>
+      <p>You may revoke permissions at any time in your system settings, or delete the app to remove local data. If you have any questions, please contact: <a href="mailto:chenyisy@gmail.com">chenyisy@gmail.com</a>.</p>
+
+      <h2>9. Children’s Privacy</h2>
+      <p>We do not knowingly collect information from children under the age of 13.</p>
+
+      <h2>10. International Compliance</h2>
+      <p>We comply with applicable laws and regulations, including GDPR and CCPA, and respect your related rights.</p>
+
+      <h2>11. Policy Updates</h2>
+      <p>If this Privacy Policy is updated, we will notify you within the app.</p>
+
+      <hr>
+      <div class="footer-note">Navo © 2025 · Local first · Privacy by design</div>
+    </div>
+
+    <!-- 日本語 -->
+    <div id="policy-ja" class="lang-content" lang="ja" data-title="プライバシーポリシー · Navo" data-description="Navo のプライバシーポリシー。端末内処理、暗号化されたローカル保存、サーバーへのアップロードなし。">
+      <div class="hero">
+        <h1>プライバシーポリシー</h1>
+        <div class="last-updated">最終更新日：2025年10月28日</div>
+        <p class="intro">Navo（以下「当社」）は、お客様のプライバシーを重視しています。本ポリシーでは、モバイルアプリの利用時における情報の収集、利用、保存および保護について説明します。</p>
+      </div>
+
+      <h2>一、収集する情報</h2>
+      <ul>
+        <li><strong>写真・動画：</strong>お客様の許可がある場合にのみアクセスし、整理、読み込み、解析はすべて端末内で行われます。</li>
+        <li><strong>カメラ・マイク：</strong>撮影・録音機能を利用した場合にのみ使用され、プライベート保管庫に暗号化して保存されます。</li>
+        <li><strong>デバイス情報：</strong>性能、安定性、互換性の向上のためにのみ使用し、個人を特定する情報は含みません。</li>
+        <li><strong>サブスクリプション情報：</strong>購読状態の確認および管理のためにのみ使用します。</li>
+      </ul>
+
+      <h2>二、情報の利用目的</h2>
+      <ul>
+        <li>アプリの中核機能の提供および維持</li>
+        <li>スマートクリーンアップ提案とメディア整理機能の提供</li>
+        <li>サブスクリプションの管理と状態確認</li>
+        <li>プライベート保管庫の認証と安全保護</li>
+        <li>性能改善、互換性向上、不具合修正</li>
+      </ul>
+
+      <h2>三、画像解析機能</h2>
+      <ul>
+        <li><strong>類似コンテンツ検出：</strong>Vision フレームワークを使用して特徴ベクトルを抽出し、類似する写真や動画を識別します。</li>
+        <li><strong>コンテンツ分類：</strong>Live Photo、連写、スクリーンショットなどのメディア種別を自動判別します。</li>
+        <li><strong>端末内処理：</strong>すべての解析はお客様の端末上で実行されます。</li>
+        <li><strong>特徴データ保存：</strong>性能向上のため、特徴ベクトルを端末内に保存する場合があります。</li>
+      </ul>
+
+      <h2>四、要求する権限</h2>
+      <table>
+        <tr>
+          <th>権限</th>
+          <th>用途</th>
+          <th>必須</th>
+        </tr>
+        <tr>
+          <td>写真ライブラリ</td>
+          <td>クリーンアップ提案、読み込み、端末内解析</td>
+          <td>必須</td>
+        </tr>
+        <tr>
+          <td>写真ライブラリに追加</td>
+          <td>ファイル保存または書き出し</td>
+          <td>任意</td>
+        </tr>
+        <tr>
+          <td>カメラ</td>
+          <td>プライベートコンテンツの撮影</td>
+          <td>任意</td>
+        </tr>
+        <tr>
+          <td>マイク</td>
+          <td>動画撮影時の音声録音</td>
+          <td>任意</td>
+        </tr>
+      </table>
+
+      <h2>五、データ保持とセキュリティ</h2>
+      <ul>
+        <li><strong>ローカル保存：</strong>すべてのデータは端末内に保存され、サーバーや第三者へ送信されません。</li>
+        <li><strong>暗号化：</strong>保存データは AES-GCM 256 ビットで保護されます。</li>
+        <li><strong>鍵管理：</strong>PBKDF2 による鍵導出と 100,000 回の反復で安全性を強化しています。</li>
+        <li><strong>セッション管理：</strong>5 分間操作がない場合、自動的にロックされます。</li>
+        <li><strong>完全性検証：</strong>SHA-256 ハッシュによりデータ完全性を検証します。</li>
+        <li><strong>自動クリーンアップ：</strong>キャッシュ、一時ファイル、期限切れログを自動的に削除します。</li>
+      </ul>
+
+      <h2>六、データ保持方針</h2>
+      <ul>
+        <li><strong>端末内保存：</strong>データはお客様が削除するまで端末内に保持されます。</li>
+        <li><strong>アプリ削除：</strong>アプリをアンインストールすると、アプリのローカルコンテナ内データは削除されます。</li>
+        <li><strong>特徴データ：</strong>性能向上のため生成された特徴ベクトルは端末内に保持される場合があります。</li>
+        <li><strong>キャッシュ削除：</strong>一時ファイルとキャッシュは自動的に削除されます。</li>
+      </ul>
+
+      <h2>七、第三者サービス</h2>
+      <p>本アプリは第三者の分析、広告、追跡サービスを一切利用しません。サブスクリプション関連機能には Apple の公式サービスのみを使用します。</p>
+
+      <h2>八、お客様の権利</h2>
+      <p>システム設定で権限を取り消すか、アプリを削除することでローカルデータを削除できます。お問い合わせ先：<a href="mailto:chenyisy@gmail.com">chenyisy@gmail.com</a></p>
+
+      <h2>九、子どものプライバシー</h2>
+      <p>13 歳未満の子どもから故意に情報を収集することはありません。</p>
+
+      <h2>十、国際法令の遵守</h2>
+      <p>GDPR、CCPA を含む適用法令を遵守し、お客様の関連する権利を尊重します。</p>
+
+      <h2>十一、ポリシーの更新</h2>
+      <p>本ポリシーに更新がある場合、アプリ内でお知らせします。</p>
+
+      <hr>
+      <div class="footer-note">Navo © 2025 · ローカル優先 · プライバシー重視</div>
+    </div>
+
+    <!-- Français -->
+    <div id="policy-fr" class="lang-content" lang="fr" data-title="Politique de confidentialité · Navo" data-description="Politique de confidentialité Navo : traitement sur l’appareil, stockage local chiffré, aucune mise en ligne sur serveur.">
+      <div class="hero">
+        <h1>Politique de confidentialité</h1>
+        <div class="last-updated">Dernière mise à jour : 28 octobre 2025</div>
+        <p class="intro">Navo (« nous ») accorde une grande importance à votre vie privée. Cette politique explique comment nous collectons, utilisons, stockons et protégeons vos informations lorsque vous utilisez notre application mobile.</p>
+      </div>
+
+      <h2>1. Informations que nous collectons</h2>
+      <ul>
+        <li><strong>Photos et vidéos :</strong> accessibles uniquement avec votre autorisation, pour les suggestions de nettoyage, l’importation et l’analyse locale.</li>
+        <li><strong>Caméra et microphone :</strong> utilisés uniquement lorsque vous activez des fonctions de capture, puis chiffrés dans le coffre privé.</li>
+        <li><strong>Informations sur l’appareil :</strong> utilisées uniquement pour améliorer les performances, la stabilité et la compatibilité, sans identifiant personnel.</li>
+        <li><strong>Informations d’abonnement :</strong> utilisées uniquement pour vérifier et gérer l’état de votre abonnement.</li>
+      </ul>
+
+      <h2>2. Comment nous utilisons vos informations</h2>
+      <ul>
+        <li>Fournir et maintenir les fonctionnalités essentielles de l’application</li>
+        <li>Proposer des सुझाव de nettoyage intelligent et d’organisation des médias</li>
+        <li>Gérer les abonnements et vérifier leur statut</li>
+        <li>Assurer l’authentification et la protection du coffre privé</li>
+        <li>Améliorer les performances et corriger les erreurs</li>
+      </ul>
+
+      <h2>3. Fonctionnalités d’analyse d’images</h2>
+      <ul>
+        <li><strong>Détection de similarité :</strong> utilisation du framework Vision pour extraire des vecteurs de caractéristiques et identifier des photos ou vidéos similaires.</li>
+        <li><strong>Classification de contenu :</strong> détection automatique des Live Photos, rafales, captures d’écran, etc.</li>
+        <li><strong>Traitement local :</strong> toutes les analyses sont effectuées localement sur l’appareil.</li>
+        <li><strong>Stockage des vecteurs :</strong> les vecteurs de caractéristiques peuvent être stockés localement pour améliorer les performances.</li>
+      </ul>
+
+      <h2>4. Autorisations demandées</h2>
+      <table>
+        <tr>
+          <th>Autorisation</th>
+          <th>Utilisation</th>
+          <th>Obligatoire</th>
+        </tr>
+        <tr>
+          <td>Photothèque</td>
+          <td>Suggestions de nettoyage, importation et analyse locale</td>
+          <td>Oui</td>
+        </tr>
+        <tr>
+          <td>Ajouter à la photothèque</td>
+          <td>Enregistrer ou exporter des fichiers</td>
+          <td>Optionnel</td>
+        </tr>
+        <tr>
+          <td>Caméra</td>
+          <td>Capturer du contenu privé</td>
+          <td>Optionnel</td>
+        </tr>
+        <tr>
+          <td>Microphone</td>
+          <td>Enregistrement audio pendant la capture vidéo</td>
+          <td>Optionnel</td>
+        </tr>
+      </table>
+
+      <h2>5. Conservation des données et sécurité</h2>
+      <ul>
+        <li><strong>Stockage local :</strong> toutes les données restent sur votre appareil et ne sont jamais envoyées à nos serveurs ni à des tiers.</li>
+        <li><strong>Chiffrement :</strong> les données stockées sont protégées par AES-GCM 256 bits.</li>
+        <li><strong>Gestion des clés :</strong> PBKDF2 avec 100 000 itérations renforce la sécurité.</li>
+        <li><strong>Gestion de session :</strong> verrouillage automatique après 5 minutes d’inactivité.</li>
+        <li><strong>Intégrité :</strong> vérification de l’intégrité au moyen d’un hachage SHA-256.</li>
+        <li><strong>Nettoyage automatique :</strong> suppression automatique du cache, des fichiers temporaires et des journaux expirés.</li>
+      </ul>
+
+      <h2>6. Politique de conservation</h2>
+      <ul>
+        <li><strong>Sur l’appareil :</strong> les données restent sur votre appareil jusqu’à leur suppression par vos soins.</li>
+        <li><strong>Désinstallation :</strong> la désinstallation supprime les données stockées dans le conteneur local de l’application.</li>
+        <li><strong>Données de caractéristiques :</strong> les vecteurs générés pour les performances peuvent rester stockés localement.</li>
+        <li><strong>Nettoyage du cache :</strong> le cache et les fichiers temporaires sont nettoyés automatiquement.</li>
+      </ul>
+
+      <h2>7. Services tiers</h2>
+      <p>L’application n’intègre aucun service tiers d’analyse, de publicité ou de suivi. Les fonctions d’abonnement reposent uniquement sur les services officiels d’Apple.</p>
+
+      <h2>8. Vos droits</h2>
+      <p>Vous pouvez révoquer les autorisations dans les réglages système ou supprimer l’application pour effacer les données locales. Contact : <a href="mailto:chenyisy@gmail.com">chenyisy@gmail.com</a></p>
+
+      <h2>9. Vie privée des enfants</h2>
+      <p>Nous ne collectons pas sciemment d’informations concernant des enfants de moins de 13 ans.</p>
+
+      <h2>10. Conformité internationale</h2>
+      <p>Nous respectons les réglementations applicables, y compris le RGPD et le CCPA, et nous veillons au respect de vos droits.</p>
+
+      <h2>11. Mises à jour de la politique</h2>
+      <p>En cas de mise à jour de cette politique, une notification sera affichée dans l’application.</p>
+
+      <hr>
+      <div class="footer-note">Navo © 2025 · Local d’abord · Confidentialité avant tout</div>
+    </div>
+
+    <!-- Español -->
+    <div id="policy-es" class="lang-content" lang="es" data-title="Política de privacidad · Navo" data-description="Política de privacidad de Navo: procesamiento en el dispositivo, almacenamiento local cifrado y sin subidas a servidores.">
+      <div class="hero">
+        <h1>Política de privacidad</h1>
+        <div class="last-updated">Última actualización: 28 de octubre de 2025</div>
+        <p class="intro">Navo (“nosotros”) valora su privacidad. Esta Política de privacidad explica cómo recopilamos, usamos, almacenamos y protegemos su información cuando utiliza nuestra aplicación móvil.</p>
+      </div>
+
+      <h2>1. Información que recopilamos</h2>
+      <ul>
+        <li><strong>Fotos y videos:</strong> solo se accede con su permiso para sugerencias de limpieza, importación y análisis local.</li>
+        <li><strong>Cámara y micrófono:</strong> se usan únicamente cuando usted activa funciones de captura para grabar y cifrar contenido privado en la bóveda.</li>
+        <li><strong>Información del dispositivo:</strong> se utiliza solo para mejorar el rendimiento, la estabilidad y la compatibilidad, sin identificadores personales.</li>
+        <li><strong>Información de suscripción:</strong> se utiliza únicamente para verificar y gestionar el estado de su suscripción.</li>
+      </ul>
+
+      <h2>2. Cómo usamos su información</h2>
+      <ul>
+        <li>Proporcionar y mantener las funciones principales de la aplicación</li>
+        <li>Ofrecer sugerencias inteligentes de limpieza y organización de medios</li>
+        <li>Gestionar suscripciones y verificar el estado de la suscripción</li>
+        <li>Respaldar la autenticación y protección de la bóveda privada</li>
+        <li>Optimizar el rendimiento y corregir errores</li>
+      </ul>
+
+      <h2>3. Funciones de análisis de imágenes</h2>
+      <ul>
+        <li><strong>Detección de similitud:</strong> utiliza el framework Vision para extraer vectores de características e identificar fotos y videos similares.</li>
+        <li><strong>Clasificación de contenido:</strong> detecta automáticamente Live Photos, ráfagas, capturas de pantalla y otros tipos de medios.</li>
+        <li><strong>Procesamiento local:</strong> todo el análisis se realiza localmente en el dispositivo.</li>
+        <li><strong>Almacenamiento de vectores:</strong> los vectores de características pueden almacenarse localmente para mejorar el rendimiento.</li>
+      </ul>
+
+      <h2>4. Permisos solicitados</h2>
+      <table>
+        <tr>
+          <th>Permiso</th>
+          <th>Uso</th>
+          <th>Obligatorio</th>
+        </tr>
+        <tr>
+          <td>Fototeca</td>
+          <td>Sugerencias de limpieza, importación y análisis local</td>
+          <td>Sí</td>
+        </tr>
+        <tr>
+          <td>Agregar a la fototeca</td>
+          <td>Guardar o exportar archivos</td>
+          <td>Opcional</td>
+        </tr>
+        <tr>
+          <td>Cámara</td>
+          <td>Capturar contenido privado</td>
+          <td>Opcional</td>
+        </tr>
+        <tr>
+          <td>Micrófono</td>
+          <td>Grabación de audio durante la captura de video</td>
+          <td>Opcional</td>
+        </tr>
+      </table>
+
+      <h2>5. Conservación de datos y seguridad</h2>
+      <ul>
+        <li><strong>Almacenamiento local:</strong> todos los datos permanecen en su dispositivo y nunca se suben a nuestros servidores ni a terceros.</li>
+        <li><strong>Cifrado:</strong> los datos almacenados están protegidos con AES-GCM de 256 bits.</li>
+        <li><strong>Gestión de claves:</strong> se utiliza PBKDF2 con 100.000 iteraciones para reforzar la seguridad.</li>
+        <li><strong>Gestión de sesión:</strong> la aplicación se bloquea automáticamente tras 5 minutos de inactividad.</li>
+        <li><strong>Integridad:</strong> se utiliza hash SHA-256 para verificar la integridad de los datos.</li>
+        <li><strong>Limpieza automática:</strong> se eliminan automáticamente caché, archivos temporales y registros vencidos.</li>
+      </ul>
+
+      <h2>6. Política de conservación de datos</h2>
+      <ul>
+        <li><strong>En el dispositivo:</strong> los datos permanecen en su dispositivo hasta que usted los elimine.</li>
+        <li><strong>Desinstalación:</strong> desinstalar la aplicación elimina los datos almacenados en su contenedor local.</li>
+        <li><strong>Datos de características:</strong> los vectores generados para rendimiento pueden permanecer almacenados localmente.</li>
+        <li><strong>Limpieza de caché:</strong> los archivos temporales y la caché se limpian automáticamente.</li>
+      </ul>
+
+      <h2>7. Servicios de terceros</h2>
+      <p>Esta aplicación no integra servicios de análisis, publicidad ni seguimiento de terceros. Las funciones de suscripción dependen únicamente de los servicios oficiales de Apple.</p>
+
+      <h2>8. Sus derechos</h2>
+      <p>Puede revocar permisos en la configuración del sistema o eliminar la aplicación para borrar los datos locales. Contacto: <a href="mailto:chenyisy@gmail.com">chenyisy@gmail.com</a></p>
+
+      <h2>9. Privacidad infantil</h2>
+      <p>No recopilamos conscientemente información de menores de 13 años.</p>
+
+      <h2>10. Cumplimiento internacional</h2>
+      <p>Cumplimos con las leyes y normativas aplicables, incluido GDPR y CCPA, y respetamos sus derechos relacionados.</p>
+
+      <h2>11. Actualizaciones de la política</h2>
+      <p>Si esta política se actualiza, se lo notificaremos dentro de la aplicación.</p>
+
+      <hr>
+      <div class="footer-note">Navo © 2025 · Local primero · Privacidad ante todo</div>
+    </div>
   </div>
 
-  <!-- 日本語 -->
-  <div id="policy-ja" class="lang-content" lang="ja">
-    <h1>プライバシーポリシー</h1>
-    <div class="last-updated">最終更新日：2025年10月28日</div>
-    <p>Navo（以下「当社」）は、お客様のプライバシーを重視しています。本ポリシーでは、アプリご利用時の情報収集・利用・保管・保護について説明します。</p>
-    <h2>一、収集する情報</h2><ul><li><strong>写真・ビデオ：</strong>許可を得た場合のみアクセス、すべて端末内で処理</li><li><strong>カメラ・マイク：</strong>撮影・録音、暗号化して保管庫へ</li><li><strong>デバイス情報：</strong>パフォーマンス向上のみ、個人特定情報は含まない</li><li><strong>サブスクリプション情報：</strong>購読状態の確認のみ</li></ul>
-    <h2>二、情報の利用目的</h2><ul><li>コア機能の提供・維持</li><li>スマートクリーンアップ提案</li><li>サブスクリプション管理・検証</li><li>プライベート保管庫の認証</li><li>パフォーマンス最適化・不具合修正</li></ul>
-    <h2>三、画像解析機能</h2><ul><li><strong>類似コンテンツ検出：</strong>Visionフレームワークで特徴ベクトル抽出、類似写真・動画を識別</li><li><strong>コンテンツ分類：</strong>Live Photo、連写、スクリーンショットなどを自動判別</li><li><strong>端末内処理：</strong>解析はすべて端末上で実行</li><li><strong>特徴データ保存：</strong>パフォーマンス向上のため特徴ベクトルを端末に保存</li></ul>
-    <h2>四、リクエストする権限</h2>
-    <table><tr><th>権限</th><th>目的</th><th>必須</th></tr><tr><td>写真ライブラリ</td><td>クリーンアップ提案、読み込み</td><td>必須</td></tr><tr><td>ライブラリに追加</td><td>ファイル保存</td><td>任意</td></tr><tr><td>カメラ</td><td>プライベート撮影</td><td>任意</td></tr><tr><td>マイク</td><td>ビデオ録音</td><td>任意</td></tr></table>
-    <h2>五、データ保持とセキュリティ</h2><ul><li><strong>ローカル保存：</strong>データは端末内のみ、サーバーや第三者へ送信されない</li><li><strong>暗号化：</strong>AES-GCM 256ビット</li><li><strong>鍵管理：</strong>PBKDF2、10万回反復</li><li><strong>セッション管理：</strong>5分間操作なしで自動ロック</li><li><strong>完全性検証：</strong>SHA256ハッシュ</li><li><strong>自動クリーンアップ：</strong>キャッシュ・一時ファイル・期限切れログを削除</li></ul>
-    <h2>六、データ保持方針</h2><ul><li><strong>端末内：</strong>ユーザーが削除するまで保持</li><li><strong>アンインストール：</strong>全ローカルデータ削除</li><li><strong>特徴データ：</strong>パフォーマンスのため端末に残る場合あり</li><li><strong>キャッシュ削除：</strong>自動実行</li></ul>
-    <h2>七、第三者サービス</h2><p>第三者による分析・広告・トラッキングは一切なし。Apple公式サブスクリプションのみ。</p>
-    <h2>八、お客様の権利</h2><p>システム設定で権限を取り消すか、アプリ削除で全データを消去できます。連絡先：<a href="mailto:chenyisy@gmail.com">chenyisy@gmail.com</a></p>
-    <h2>九、子どもに関するプライバシー</h2><p>13歳未満の児童から意図的に情報を収集することはありません。</p>
-    <h2>十、国際規制の遵守</h2><p>GDPR、CCPAなどを含む適用法令を遵守します。</p>
-    <h2>十一、ポリシーの更新</h2><p>更新時はアプリ内でお知らせします。</p>
-    <hr><div class="footer-note">Navo © 2025 · プライバシー第一</div>
-  </div>
+  <script>
+    (function () {
+      const langSelect = document.getElementById('langSwitcher');
+      const containers = {
+        zh: document.getElementById('policy-zh'),
+        en: document.getElementById('policy-en'),
+        ja: document.getElementById('policy-ja'),
+        fr: document.getElementById('policy-fr'),
+        es: document.getElementById('policy-es')
+      };
 
-  <!-- Français -->
-  <div id="policy-fr" class="lang-content" lang="fr">
-    <h1>Politique de confidentialité</h1>
-    <div class="last-updated">Dernière mise à jour : 28 octobre 2025</div>
-    <p>Navo (« nous ») accorde une grande importance à votre vie privée. Cette politique décrit la collecte, l'utilisation et la protection de vos données.</p>
-    <h2>1. Informations collectées</h2><ul><li><strong>Photos et vidéos :</strong> accès uniquement avec autorisation, traitement local</li><li><strong>Caméra et micro :</strong> pour capturer et chiffrer des médias privés</li><li><strong>Informations sur l'appareil :</strong> uniquement pour la performance, sans identifiants</li><li><strong>Données d'abonnement :</strong> pour vérifier le statut d'abonnement</li></ul>
-    <h2>2. Utilisation de vos informations</h2><ul><li>Fournir et maintenir les fonctions de base</li><li>Suggestions de nettoyage intelligent</li><li>Gestion et vérification des abonnements</li><li>Authentification du coffre-fort privé</li><li>Optimisation des performances et correction des bugs</li></ul>
-    <h2>3. Fonctions d'analyse d'images</h2><ul><li><strong>Détection de similarité :</strong> via le framework Vision (vecteurs de caractéristiques)</li><li><strong>Classification :</strong> Live Photos, rafales, captures d'écran</li><li><strong>Traitement local :</strong> sur l'appareil uniquement</li><li><strong>Stockage des vecteurs :</strong> pour améliorer les performances</li></ul>
-    <h2>4. Autorisations demandées</h2>
-    <table><tr><th>Autorisation</th><th>Utilisation</th><th>Obligatoire</th></tr><tr><td>Bibliothèque photos</td><td>Suggestions, import</td><td>Oui</td></tr><tr><td>Ajouter à la bibliothèque</td><td>Sauvegarder des fichiers</td><td>Non</td></tr><tr><td>Caméra</td><td>Capturer du contenu privé</td><td>Non</td></tr><tr><td>Micro</td><td>Enregistrement audio (vidéo)</td><td>Non</td></tr></table>
-    <h2>5. Conservation et sécurité</h2><ul><li><strong>Stockage local :</strong> jamais transféré à un serveur</li><li><strong>Chiffrement :</strong> AES‑GCM 256 bits</li><li><strong>Gestion des clés :</strong> PBKDF2 (100 000 itérations)</li><li><strong>Verrouillage :</strong> après 5 minutes d'inactivité</li><li><strong>Intégrité :</strong> hachage SHA256</li><li><strong>Nettoyage auto :</strong> cache, fichiers temporaires, logs</li></ul>
-    <h2>6. Politique de conservation</h2><ul><li><strong>Sur l'appareil :</strong> jusqu'à suppression manuelle</li><li><strong>Désinstallation :</strong> supprime toutes les données locales</li><li><strong>Vecteurs :</strong> peuvent persister localement pour la performance</li><li><strong>Nettoyage cache :</strong> automatique</li></ul>
-    <h2>7. Services tiers</h2><p>Aucun service tiers d'analyse, publicité ou traçage. Uniquement les services d'abonnement Apple.</p>
-    <h2>8. Vos droits</h2><p>Révoquer les autorisations ou désinstaller l'application. Contact : <a href="mailto:chenyisy@gmail.com">chenyisy@gmail.com</a></p>
-    <h2>9. Vie privée des enfants</h2><p>Pas de collecte délibérée d'informations sur les moins de 13 ans.</p>
-    <h2>10. Conformité internationale</h2><p>Respect des réglementations telles que RGPD et CCPA.</p>
-    <h2>11. Mises à jour</h2><p>Notification dans l'application en cas de changement.</p>
-    <hr><div class="footer-note">Navo © 2025 · La confidentialité d'abord</div>
-  </div>
+      const metaDescription = document.querySelector('meta[name="description"]');
 
-  <!-- Español -->
-  <div id="policy-es" class="lang-content" lang="es">
-    <h1>Política de privacidad</h1>
-    <div class="last-updated">Última actualización: 28 de octubre de 2025</div>
-    <p>Navo ("nosotros") valora su privacidad. Esta política explica cómo manejamos su información.</p>
-    <h2>1. Información que recopilamos</h2><ul><li><strong>Fotos y videos:</strong> acceso solo con permiso, procesamiento local</li><li><strong>Cámara y micrófono:</strong> para capturar contenido privado y cifrarlo</li><li><strong>Información del dispositivo:</strong> solo mejora de rendimiento, sin datos personales</li><li><strong>Información de suscripción:</strong> verificación del estado</li></ul>
-    <h2>2. Uso de la información</h2><ul><li>Funcionalidades principales</li><li>Sugerencias de limpieza inteligente</li><li>Gestión y verificación de suscripciones</li><li>Autenticación del vault privado</li><li>Optimización y corrección de errores</li></ul>
-    <h2>3. Análisis de imágenes</h2><ul><li><strong>Detección de similitud:</strong> Vision framework, vectores de características</li><li><strong>Clasificación:</strong> Live Photos, ráfagas, capturas</li><li><strong>Procesamiento local:</strong> en el dispositivo</li><li><strong>Vectores almacenados:</strong> para mejorar rendimiento</li></ul>
-    <h2>4. Permisos solicitados</h2>
-    <table><tr><th>Permiso</th><th>Uso</th><th>Obligatorio</th></tr><tr><td>Fototeca</td><td>Sugerencias, importar</td><td>Sí</td></tr><tr><td>Agregar a la biblioteca</td><td>Guardar archivos</td><td>No</td></tr><tr><td>Cámara</td><td>Capturar contenido privado</td><td>No</td></tr><tr><td>Micrófono</td><td>Grabación de video</td><td>No</td></tr></table>
-    <h2>5. Retención y seguridad</h2><ul><li><strong>Almacenamiento local:</strong> nunca se sube a servidores</li><li><strong>Cifrado:</strong> AES‑GCM 256 bits</li><li><strong>Gestión de claves:</strong> PBKDF2, 100.000 iteraciones</li><li><strong>Bloqueo:</strong> tras 5 minutos de inactividad</li><li><strong>Integridad:</strong> hash SHA256</li><li><strong>Limpieza automática:</strong> caché, archivos temporales</li></ul>
-    <h2>6. Política de retención</h2><ul><li><strong>En dispositivo:</strong> hasta que usted elimine</li><li><strong>Desinstalar app:</strong> borra todos los datos locales</li><li><strong>Vectores:</strong> pueden permanecer por rendimiento</li><li><strong>Limpieza caché:</strong> automática</li></ul>
-    <h2>7. Servicios de terceros</h2><p>Sin análisis, anuncios o rastreo de terceros. Solo servicios de suscripción oficiales de Apple.</p>
-    <h2>8. Sus derechos</h2><p>Revocar permisos en ajustes o desinstalar la app. Contacto: <a href="mailto:chenyisy@gmail.com">chenyisy@gmail.com</a></p>
-    <h2>9. Privacidad infantil</h2><p>No recopilamos información de menores de 13 años.</p>
-    <h2>10. Cumplimiento internacional</h2><p>Cumplimos con normativas aplicables como GDPR y CCPA.</p>
-    <h2>11. Actualizaciones</h2><p>Notificaremos en la app cualquier cambio.</p>
-    <hr><div class="footer-note">Navo © 2025 · Privacidad ante todo</div>
-  </div>
-</div>
+      function switchLanguage(lang) {
+        Object.values(containers).forEach(el => el.classList.remove('active'));
 
-<script>
-  (function() {
-    const langSelect = document.getElementById('langSwitcher');
-    const containers = {
-      zh: document.getElementById('policy-zh'),
-      en: document.getElementById('policy-en'),
-      ja: document.getElementById('policy-ja'),
-      fr: document.getElementById('policy-fr'),
-      es: document.getElementById('policy-es')
-    };
+        const current = containers[lang] || containers.en;
+        current.classList.add('active');
+        langSelect.value = lang;
 
-    function switchLanguage(lang) {
-      Object.values(containers).forEach(el => el.classList.remove('active'));
-      if (containers[lang]) containers[lang].classList.add('active');
-      langSelect.value = lang;
-      document.documentElement.lang = (lang === 'zh' ? 'zh-CN' : lang);
-      // optional: update meta description? not necessary
-    }
+        document.documentElement.lang = current.getAttribute('lang') || lang;
+        document.title = current.dataset.title || 'Privacy Policy · Navo';
 
-    langSelect.addEventListener('change', (e) => {
-      switchLanguage(e.target.value);
-    });
+        if (metaDescription && current.dataset.description) {
+          metaDescription.setAttribute('content', current.dataset.description);
+        }
 
-    // detect browser language
-    const navLang = navigator.language?.slice(0,2).toLowerCase() || 'en';
-    const defaultLang = ['zh','en','ja','fr','es'].includes(navLang) ? navLang : 'en';
-    switchLanguage(defaultLang);
-  })();
-</script>
+        try {
+          localStorage.setItem('navo_policy_lang', lang);
+        } catch (_) {}
+      }
+
+      langSelect.addEventListener('change', (e) => {
+        switchLanguage(e.target.value);
+      });
+
+      let savedLang = null;
+      try {
+        savedLang = localStorage.getItem('navo_policy_lang');
+      } catch (_) {}
+
+      const navLang = (navigator.language || 'en').slice(0, 2).toLowerCase();
+      const defaultLang = ['zh', 'en', 'ja', 'fr', 'es'].includes(savedLang)
+        ? savedLang
+        : (['zh', 'en', 'ja', 'fr', 'es'].includes(navLang) ? navLang : 'en');
+
+      switchLanguage(defaultLang);
+    })();
+  </script>
 </body>
 </html>
